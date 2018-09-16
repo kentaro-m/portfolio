@@ -1,1 +1,6 @@
-export default () => <div>Welcome to next.js!</div>
+import Layout from '../components/Layout'
+import '../styles/main.scss'
+
+export default () => (
+  <Layout/>
+)
