@@ -1,6 +1,7 @@
+import SlidesList from './SlidesList'
+
 const Main = (props) => (
   <div id="main">
-
     <section id="one">
       <header className="major">
         <h2>Ipsum lorem dolor aliquam ante commodo<br />
@@ -13,41 +14,12 @@ const Main = (props) => (
     </section>
 
     <section id="two">
-      <h2>Recent Work</h2>
+      <h2>Slides</h2>
       <div className="row">
-        <article className="col-6 col-12-xsmall work-item">
-          <a href="/static/images/fulls/01.jpg" className="image fit thumb"><img src="/static/images/thumbs/01.jpg" alt="" /></a>
-          <h3>Magna sed consequat tempus</h3>
-          <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-        </article>
-        <article className="col-6 col-12-xsmall work-item">
-          <a href="/static/images/fulls/02.jpg" className="image fit thumb"><img src="/static/images/thumbs/02.jpg" alt="" /></a>
-          <h3>Ultricies lacinia interdum</h3>
-          <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-        </article>
-        <article className="col-6 col-12-xsmall work-item">
-          <a href="/static/images/fulls/03.jpg" className="image fit thumb"><img src="/static/images/thumbs/03.jpg" alt="" /></a>
-          <h3>Tortor metus commodo</h3>
-          <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-        </article>
-        <article className="col-6 col-12-xsmall work-item">
-          <a href="/static/images/fulls/04.jpg" className="image fit thumb"><img src="/static/images/thumbs/04.jpg" alt="" /></a>
-          <h3>Quam neque phasellus</h3>
-          <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-        </article>
-        <article className="col-6 col-12-xsmall work-item">
-          <a href="/static/images/fulls/05.jpg" className="image fit thumb"><img src="/static/images/thumbs/05.jpg" alt="" /></a>
-          <h3>Nunc enim commodo aliquet</h3>
-          <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-        </article>
-        <article className="col-6 col-12-xsmall work-item">
-          <a href="/static/images/fulls/06.jpg" className="image fit thumb"><img src="/static/images/thumbs/06.jpg" alt="" /></a>
-          <h3>Risus ornare lacinia</h3>
-          <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-        </article>
+        <SlidesList slidesList={props.slidesList} />
       </div>
       <ul className="actions">
-        <li><a href="#" className="button">Full Portfolio</a></li>
+        <li><a href="#" className="button">Show More Slides</a></li>
       </ul>
     </section>
 
