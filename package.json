@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",
+    "isomorphic-unfetch": "^2.1.1",
+    "moment": "^2.22.2",
     "next": "^6.1.2",
     "node-sass": "^4.9.3",
     "react": "^16.5.1",
