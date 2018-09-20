@@ -1,24 +1,22 @@
-import React from 'react'
-import fetch from 'isomorphic-unfetch'
-import querystring from 'querystring'
+import React, { Component } from 'react'
+import config from '../lib/config'
 import Layout from '../components/Layout'
+import { getSlides, getQiitaItems } from '../lib/utils'
 import '../styles/main.scss'
 
-export default class Index extends React.Component {
+export default class Index extends Component {
   static async getInitialProps () {
-    const qs = querystring.stringify({
-      q: 'select * from feed where url = \'https://speakerdeck.com/kentarom.atom\'',
-      format: 'json'
-    })
-    const res = await fetch(`https://query.yahooapis.com/v1/public/yql?${qs}`)
-    const json = await res.json()
-
-    return { slidesList: json.query.results.entry }
+    const slides = await getSlides(config.user.speaker_deck, config.speaker_deck.slides_count)
+    const qiitaItems = await getQiitaItems(config.qiita.item_count)
+    return { slides: slides, qiitaItems: qiitaItems }
   }
 
   render () {
     return (
-      <Layout slidesList={this.props.slidesList} />
+      <Layout
+        slides={this.props.slides}
+        qiitaItems={this.props.qiitaItems}
+      />
     )
   }
 }
