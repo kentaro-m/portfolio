@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 
-export default class SlidesList extends Component {
+export default class Slides extends Component {
   constructor (props) {
     super(props)
   }
 
   render () {
-    const slides = this.props.slidesList.map((slide) => {
+    const slides = this.props.slides.map((slide) => {
       const imageUrl = slide.content.content.match(/src="(.+?)"/)
-      const publishedDate = moment(slide.published).format('YYYY-MM-DD')
+      const createdAt = moment(slide.published).format('YYYY-MM-DD')
 
       return (
         <article className="col-4 col-12-xsmall work-item" key={slide.id}>
@@ -20,7 +20,7 @@ export default class SlidesList extends Component {
           <a href={slide.link.href}>
             <h3>{slide.title}</h3>
           </a>
-          <p>{publishedDate}</p>
+          <p>{createdAt}</p>
         </article>
       )
     })

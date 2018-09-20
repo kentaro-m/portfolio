@@ -1,4 +1,5 @@
-import SlidesList from './SlidesList'
+import Slides from './Slides'
+import QiitaItems from './QiitaItems'
 
 const Main = (props) => (
   <div id="main">
@@ -14,16 +15,24 @@ const Main = (props) => (
     </section>
 
     <section id="two">
+      <h2>Qiita</h2>
+      <QiitaItems qiitaItems={props.qiitaItems} />
+      <ul className="actions">
+        <li><a href="#" className="button">Show More Items</a></li>
+      </ul>
+    </section>
+
+    <section id="three">
       <h2>Slides</h2>
       <div className="row">
-        <SlidesList slidesList={props.slidesList} />
+        <Slides slides={props.slides} />
       </div>
       <ul className="actions">
         <li><a href="#" className="button">Show More Slides</a></li>
       </ul>
     </section>
 
-    <section id="three">
+    <section id="four">
       <h2>Get In Touch</h2>
       <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
       <div className="row">

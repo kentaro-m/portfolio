@@ -4,7 +4,10 @@ import Main from './Main'
 const Layout = (props) => (
   <div>
     <Header/>
-    <Main slidesList={props.slidesList} />
+    <Main
+      slides={props.slides}
+      qiitaItems={props.qiitaItems}
+    />
   </div>
 )
 
