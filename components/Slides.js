@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import moment from 'moment'
 
 export default class Slides extends Component {
@@ -31,4 +32,8 @@ export default class Slides extends Component {
       </div>
     )
   }
+}
+
+Slides.propTypes = {
+  slides: PropTypes.array
 }
