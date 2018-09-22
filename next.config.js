@@ -3,9 +3,14 @@ require('dotenv').config()
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
 const withSass = require('@zeit/next-sass')
+const withMDX = require('@zeit/next-mdx')({
+  extension: /\.md?$/
+})
 
-module.exports = withSass({
+module.exports = withMDX(withSass({
   webpack(config) {
+    pageExtensions: ['md']
+
     config.plugins = config.plugins || []
 
     config.plugins = [
@@ -19,4 +24,4 @@ module.exports = withSass({
 
     return config
   }
-})
+}))
