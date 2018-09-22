@@ -1,18 +1,14 @@
 import React from 'react'
+import SiteDescription from '../content/site_description.md'
+import config from '../lib/config'
 
 const Header = props => (
   <header id="header">
     <div className="inner">
       <a href="#" className="image avatar">
-        <img src="/static/images/avatar.jpg" alt="" />
+        <img src="/static/images/avatar.png" alt="" />
       </a>
-      <h1>
-        <strong>I am Strata</strong>, a super simple
-        <br />
-        responsive site template freebie
-        <br />
-        crafted by <a href="http://html5up.net">HTML5 UP</a>.
-      </h1>
+      <SiteDescription/>
     </div>
     <footer id="footer">
       <div className="inner">
@@ -39,7 +35,7 @@ const Header = props => (
           </li>
         </ul>
         <ul className="copyright">
-          <li>&copy; Untitled</li>
+          <li>&copy; {config.user.name}</li>
           <li>
             Design: <a href="http://html5up.net">HTML5 UP</a>
           </li>
