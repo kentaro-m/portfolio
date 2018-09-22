@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import Header from './Header'
 import Main from './Main'
 
-const Layout = (props) => (
+const Layout = props => (
   <div>
-    <Header/>
+    <Header />
     <Main
       repos={props.repos}
       slides={props.slides}
