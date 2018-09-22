@@ -1,17 +1,23 @@
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import GitHubRepos from './GitHubRepos'
 import Slides from './Slides'
 import QiitaItems from './QiitaItems'
 import config from '../lib/config'
 
-const Main = (props) => (
+const Main = props => (
   <div id="main">
     <section id="one">
       <h2>GitHub</h2>
       <GitHubRepos repos={props.repos} />
       <ul className="actions">
         <li>
-          <a href={`https://github.com/${config.user.github}`} className="button">Show More Items</a>
+          <a
+            href={`https://github.com/${config.user.github}`}
+            className="button"
+          >
+            Show More Items
+          </a>
         </li>
       </ul>
     </section>
@@ -21,7 +27,9 @@ const Main = (props) => (
       <QiitaItems qiitaItems={props.qiitaItems} />
       <ul className="actions">
         <li>
-          <a href={`https://qiita.com/${config.user.qiita}`} className="button">Show More Items</a>
+          <a href={`https://qiita.com/${config.user.qiita}`} className="button">
+            Show More Items
+          </a>
         </li>
       </ul>
     </section>
@@ -33,7 +41,12 @@ const Main = (props) => (
       </div>
       <ul className="actions">
         <li>
-          <a href={`https://speakerdeck.com/${config.user.speaker_deck}`} className="button">Show More Slides</a>
+          <a
+            href={`https://speakerdeck.com/${config.user.speaker_deck}`}
+            className="button"
+          >
+            Show More Slides
+          </a>
         </li>
       </ul>
     </section>
