@@ -4,6 +4,7 @@ import GitHubRepos from './GitHubRepos'
 import Slides from './Slides'
 import QiitaItems from './QiitaItems'
 import BlogArticles from './BlogArticles'
+import Contact from './Contact'
 import SkillBars from './SkillBars'
 import config from '../lib/config'
 
@@ -77,6 +78,11 @@ const Main = props => {
             </a>
           </li>
         </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <Contact />
       </section>
     </div>
   )
