@@ -4,7 +4,7 @@
   padding: 8px;
   color: #a2a2a2;
   margin: 0px 10px 0px 0px;
-  line-height: 2.5;
+  line-height: 3.5;
   font-size: 90%;
   background: #f5f5f5;
 }
@@ -47,5 +47,13 @@
       color: #fff;
       font-size: 11px;
     }
+  }
+}
+
+/* Slides */
+
+.slide-title {
+  h3 {
+    color: _palette(accent1, bg);
   }
 }

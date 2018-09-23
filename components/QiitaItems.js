@@ -9,7 +9,7 @@ const QiitaItems = props => {
     return (
       <li key={item.id}>
         {createdAt}
-        <a className="item-title" href={item.url}>
+        <a className="item-title" href={item.url} target="_blank">
           {item.title}
         </a>
       </li>

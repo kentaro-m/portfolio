@@ -11,7 +11,7 @@ const Main = props => {
     <div id="main">
       <section id="skills">
         <h2>Skills</h2>
-        <SkillBars backgroundColor="#666666" skills={config.skills} />
+        <SkillBars backgroundColor="#4173B3" skills={config.skills} />
       </section>
 
       <section id="github">
@@ -22,6 +22,7 @@ const Main = props => {
             <a
               href={`https://github.com/${config.user.github}`}
               className="button"
+              target="_blank"
             >
               Show More Items
             </a>
@@ -34,7 +35,10 @@ const Main = props => {
         <QiitaItems qiitaItems={props.qiitaItems}/>
         <ul className="actions">
           <li>
-            <a href={`https://qiita.com/${config.user.qiita}`} className="button">
+            <a
+              href={`https://qiita.com/${config.user.qiita}`}
+              className="button"
+              target="_blank">
               Show More Items
             </a>
           </li>
@@ -51,6 +55,7 @@ const Main = props => {
             <a
               href={`https://speakerdeck.com/${config.user.speaker_deck}`}
               className="button"
+              target="_blank"
             >
               Show More Slides
             </a>
