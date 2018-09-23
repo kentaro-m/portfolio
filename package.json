@@ -7,7 +7,7 @@
   "author": "Kentaro Matsushita <kentaro.m811@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next src/app",
     "build": "next build",
     "start": "next start",
     "lint": "eslint components/**/*.js lib/**/*.js pages/**/*.js"
@@ -29,6 +29,7 @@
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-sass": "^0.2.0",
     "dotenv-webpack": "^1.5.7",
+    "firebase-functions": "^2.0.5",
     "isomorphic-unfetch": "^2.1.1",
     "moment": "^2.22.2",
     "next": "^6.1.2",
