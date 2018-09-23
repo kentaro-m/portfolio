@@ -10,6 +10,7 @@ const Layout = props => (
       repos={props.repos}
       slides={props.slides}
       qiitaItems={props.qiitaItems}
+      articles={props.articles}
     />
   </div>
 )
