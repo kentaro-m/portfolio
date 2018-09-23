@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import config from '../lib/config'
 import Layout from '../components/Layout'
-import { getRepos, getSlides, getQiitaItems } from '../lib/utils'
+import { getRepos, getSlides, getQiitaItems, getArticles } from '../lib/utils'
 import '../styles/main.scss'
 
 export default class Index extends Component {
@@ -13,15 +13,19 @@ export default class Index extends Component {
       config.speaker_deck.slides_count
     )
     const qiitaItems = await getQiitaItems(config.qiita.item_count)
-    return { repos: repos, slides: slides, qiitaItems: qiitaItems }
+    const articles = await getArticles(config.blog.feed_url, config.blog.article_count)
+    return { repos: repos, slides: slides, qiitaItems: qiitaItems, articles: articles }
   }
 
   render() {
+    const { repos, slides, qiitaItems, articles } = this.props
+
     return (
       <Layout
-        repos={this.props.repos}
-        slides={this.props.slides}
-        qiitaItems={this.props.qiitaItems}
+        repos={repos}
+        slides={slides}
+        qiitaItems={qiitaItems}
+        articles={articles}
       />
     )
   }
@@ -30,5 +34,6 @@ export default class Index extends Component {
 Index.propTypes = {
   repos: PropTypes.array,
   slides: PropTypes.array,
-  qiitaItems: PropTypes.array
+  qiitaItems: PropTypes.array,
+  articles: PropTypes.array
 }

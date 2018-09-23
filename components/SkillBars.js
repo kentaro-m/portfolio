@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class SkillBars extends Component {
   constructor(props) {
@@ -33,4 +34,9 @@ export default class SkillBars extends Component {
       </div>
     )
   }
+}
+
+SkillBars.propTypes = {
+  backgroundColor: PropTypes.string,
+  skills: PropTypes.array
 }

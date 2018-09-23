@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import GitHubRepos from './GitHubRepos'
 import Slides from './Slides'
 import QiitaItems from './QiitaItems'
+import BlogArticles from './BlogArticles'
 import SkillBars from './SkillBars'
 import config from '../lib/config'
 
@@ -45,6 +46,21 @@ const Main = props => {
         </ul>
       </section>
 
+      <section id="blog">
+        <h2>Blog</h2>
+        <BlogArticles articles={props.articles} />
+        <ul className="actions">
+          <li>
+            <a
+              href={config.blog.url}
+              className="button"
+              target="_blank">
+              Show More Items
+            </a>
+          </li>
+        </ul>
+      </section>
+
       <section id="slides">
         <h2>Slides</h2>
         <div className="row">
@@ -69,7 +85,8 @@ const Main = props => {
 Main.propTypes = {
   repos: PropTypes.array,
   slides: PropTypes.array,
-  qiitaItems: PropTypes.array
+  qiitaItems: PropTypes.array,
+  articles: PropTypes.array
 }
 
 export default Main
