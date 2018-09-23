@@ -1,20 +1,18 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Main, NextScript } from 'next/document'
+import Head from '../components/Head'
+import config from '../lib/config'
 
 export default class MyDocument extends Document {
   render() {
     return (
       <html>
-        <Head>
-          <link rel="stylesheet" href="/_next/static/style.css" />
-          <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
-          <script src="/static/js/jquery.min.js" />
-          <script src="/static/js/jquery.poptrox.min.js" />
-          <script src="/static/js/browser.min.js" />
-          <script src="/static/js/breakpoints.min.js" />
-          <script src="/static/js/util.js" />
-          <script src="/static/js/main.js" />
-        </Head>
+        <Head
+          title={config.site.title}
+          url={config.site.url}
+          image={config.site.image}
+          twitter={config.user.twitter}
+        />
         <body className="is-preload">
           <Main />
           <NextScript />
