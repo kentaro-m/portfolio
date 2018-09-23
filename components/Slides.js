@@ -9,10 +9,10 @@ const Slides = props => {
 
     return (
       <article className="col-4 col-12-xsmall work-item" key={slide.id}>
-        <a href={slide.link.href} className="image fit thumb">
+        <a href={slide.link.href} className="image fit thumb" target="_blank">
           <img src={imageUrl[1]} alt="" />
         </a>
-        <a href={slide.link.href}>
+        <a href={slide.link.href} className="slide-title" target="_blank">
           <h3>{slide.title}</h3>
         </a>
         <p>{createdAt}</p>

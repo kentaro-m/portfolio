@@ -14,7 +14,7 @@ const GitHubRepos = props => {
 
     return (
       <li key={repo.id}>
-        <a href={repo.html_url}>{repo.name}</a>
+        <a href={repo.html_url} target="_blank">{repo.name}</a>
         <br />
         <span>
           <Emoji text={repo.description} />
