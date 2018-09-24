@@ -4,14 +4,6 @@ import Emoji from 'react-emoji-render'
 
 const GitHubRepos = props => {
   const repos = props.repos.map(repo => {
-    const topics = repo.topics.map(topic => {
-      return (
-        <span key={topic} className="topic-tag">
-          {topic}
-        </span>
-      )
-    })
-
     return (
       <li key={repo.id}>
         <a href={repo.html_url} target="_blank">{repo.name}</a>
@@ -19,8 +11,6 @@ const GitHubRepos = props => {
         <span>
           <Emoji text={repo.description} />
         </span>
-        <br />
-        <div className="topics-list">{topics}</div>
       </li>
     )
   })
