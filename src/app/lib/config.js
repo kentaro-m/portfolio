@@ -5,7 +5,7 @@ module.exports = {
     url: prod ? 'https://kentarom.com' : 'http://localhost:3000',
     title: 'Kentaro Matsushita - @kentaro-m',
     description: '',
-    image: 'og_image.png'
+    image: 'ogp_image.png'
   },
   user: {
     name: 'Kentaro Matsushita',
