@@ -8,9 +8,8 @@ const withMDX = require('@zeit/next-mdx')({
 })
 
 module.exports = withMDX(withSass({
+  distDir: '../../dist/functions/next',
   webpack(config) {
-    pageExtensions: ['md']
-
     config.plugins = config.plugins || []
 
     config.plugins = [
