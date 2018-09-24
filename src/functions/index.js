@@ -1,5 +1,5 @@
-import functions from "firebase-functions";
-import next from "next";
+const functions = require('firebase-functions')
+const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev, conf: {distDir: 'next'}});
