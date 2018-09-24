@@ -91,7 +91,7 @@ Input your profile on `src/app/content/site_description.md`.
 
 ```
 ### Kentaro Matsushita
-I'm working as a sortware engineer in Kanazawa, Japan.
+I'm working as a software engineer in Kanazawa, Japan.
 ```
 
 ### Next.js Development

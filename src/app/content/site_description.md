@@ -1,3 +1,3 @@
 ### Kentaro Matsushita
-I'm working as a sortware engineer in Kanazawa, Japan.
+I'm working as a software engineer in Kanazawa, Japan.
 
