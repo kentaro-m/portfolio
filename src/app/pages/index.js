@@ -13,8 +13,16 @@ export default class Index extends Component {
       config.speaker_deck.slides_count
     )
     const qiitaItems = await getQiitaItems(config.qiita.item_count)
-    const articles = await getArticles(config.blog.feed_url, config.blog.article_count)
-    return { repos: repos, slides: slides, qiitaItems: qiitaItems, articles: articles }
+    const articles = await getArticles(
+      config.blog.feed_url,
+      config.blog.article_count
+    )
+    return {
+      repos: repos,
+      slides: slides,
+      qiitaItems: qiitaItems,
+      articles: articles
+    }
   }
 
   render() {

@@ -17,7 +17,7 @@ const Main = props => {
 
       <section id="github">
         <h2>GitHub</h2>
-        <GitHubRepos repos={props.repos}/>
+        <GitHubRepos repos={props.repos} />
         <ul className="actions">
           <li>
             <a
@@ -33,13 +33,14 @@ const Main = props => {
 
       <section id="qiita">
         <h2>Qiita</h2>
-        <QiitaItems qiitaItems={props.qiitaItems}/>
+        <QiitaItems qiitaItems={props.qiitaItems} />
         <ul className="actions">
           <li>
             <a
               href={`https://qiita.com/${config.user.qiita}`}
               className="button"
-              target="_blank">
+              target="_blank"
+            >
               Show More Items
             </a>
           </li>
@@ -51,10 +52,7 @@ const Main = props => {
         <BlogArticles articles={props.articles} />
         <ul className="actions">
           <li>
-            <a
-              href={config.blog.url}
-              className="button"
-              target="_blank">
+            <a href={config.blog.url} className="button" target="_blank">
               Show More Items
             </a>
           </li>
@@ -64,7 +62,7 @@ const Main = props => {
       <section id="slides">
         <h2>Slides</h2>
         <div className="row">
-          <Slides slides={props.slides}/>
+          <Slides slides={props.slides} />
         </div>
         <ul className="actions">
           <li>

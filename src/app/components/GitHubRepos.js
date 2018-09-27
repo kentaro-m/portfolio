@@ -6,7 +6,9 @@ const GitHubRepos = props => {
   const repos = props.repos.map(repo => {
     return (
       <li key={repo.id}>
-        <a href={repo.html_url} target="_blank">{repo.name}</a>
+        <a href={repo.html_url} target="_blank">
+          {repo.name}
+        </a>
         <br />
         <span>
           <Emoji text={repo.description} />

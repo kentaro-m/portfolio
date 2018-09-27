@@ -2,12 +2,12 @@ import App from 'next/app'
 import * as Sentry from '@sentry/browser'
 
 export default class MyApp extends App {
-  constructor (...args) {
+  constructor(...args) {
     super(...args)
-    Sentry.init({dsn: process.env.SENTRY_PUBLIC_DSN})
+    Sentry.init({ dsn: process.env.SENTRY_PUBLIC_DSN })
   }
 
-  componentDidCatch (error, errorInfo) {
+  componentDidCatch(error, errorInfo) {
     Sentry.configureScope(scope => {
       Object.keys(errorInfo).forEach(key => {
         scope.setExtra(key, errorInfo[key])
