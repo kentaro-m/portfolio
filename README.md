@@ -29,6 +29,8 @@ Rename `.env.example` to `.env`. Get the token from each service and input.
 GITHUB_API_TOKEN=<Your GitHub Token>
 # Scope: read_qiita
 QIITA_API_TOKEN=<Your Qiita Token>
+# Error Tracking Tool
+SENTRY_PUBLIC_DSN=<Your Sentry Public DSN> 
 ```
 
 Input user info on `src/app/lib/config.js`.
