@@ -4,7 +4,7 @@ import moment from 'moment'
 
 const BlogArticles = props => {
   // NOTE: Remove duplicate article ids.
-  const articleIDs = [ ...new Set(props.articles.map(article => article.id)) ]
+  const articleIDs = [...new Set(props.articles.map(article => article.id))]
 
   const articles = articleIDs.map(articleId => {
     return props.articles.find(article => article.id === articleId)

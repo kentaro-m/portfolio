@@ -13,7 +13,7 @@
     "dev": "next src/app",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src/app/component/**/*.js src/app/lib/**/*.js src/app/pages/**/*.js src/functions/**/*.js",
+    "lint": "eslint src/app/**/*.js",
     "preserve": "yarn build-public && yarn build-funcs && yarn build-app && yarn copy-deps && yarn install-deps",
     "serve": "NODE_ENV=production firebase serve",
     "predeploy": "yarn build-public && yarn build-funcs && yarn build-app && yarn copy-deps",
@@ -30,6 +30,12 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint src/app/**/*.js --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.15.3",

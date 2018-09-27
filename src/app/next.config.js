@@ -7,20 +7,22 @@ const withMDX = require('@zeit/next-mdx')({
   extension: /\.md?$/
 })
 
-module.exports = withMDX(withSass({
-  distDir: '../../dist/functions/next',
-  webpack(config) {
-    config.plugins = config.plugins || []
+module.exports = withMDX(
+  withSass({
+    distDir: '../../dist/functions/next',
+    webpack(config) {
+      config.plugins = config.plugins || []
 
-    config.plugins = [
-      ...config.plugins,
+      config.plugins = [
+        ...config.plugins,
 
-      new Dotenv({
-        path: path.join(__dirname, '.env'),
-        systemvars: true
-      })
-    ]
+        new Dotenv({
+          path: path.join(__dirname, '.env'),
+          systemvars: true
+        })
+      ]
 
-    return config
-  }
-}))
+      return config
+    }
+  })
+)
