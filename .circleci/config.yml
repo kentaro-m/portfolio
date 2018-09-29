@@ -1,0 +1,61 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.12.0
+    working_directory: ~/workspace
+
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          # NOTE: Added a command to avoid build failures
+          # Node Sass could not find a binding for your current environment: Linux 64-bit with Node.js 8.x
+          name: rebuild node-sass
+          command: yarn add node-sass --force
+      - run:
+          name: clean dist dir
+          command: yarn clean
+      - run:
+          name: build
+          command: yarn predeploy
+      - save_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/workspace/node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  deploy:
+    docker:
+      - image: circleci/node:8.12.0
+    working_directory: ~/workspace
+
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: set environment variables
+          command: yarn set-env
+      - run:
+          name: deploy to firebase
+          command: yarn deploy:ci
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
