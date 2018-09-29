@@ -18,6 +18,8 @@
     "serve": "NODE_ENV=production firebase serve",
     "predeploy": "yarn build-public && yarn build-funcs && yarn build-app && yarn copy-deps",
     "deploy": "firebase deploy",
+    "deploy:ci": "firebase deploy --token=\"$FIREBASE_TOKEN\"",
+    "set-env": "firebase functions:config:set token.github=\"$GITHUB_API_TOKEN\" token.qiita=\"$QIITA_API_TOKEN\" token.sentry=\"$SENTRY_PUBLIC_DSN\"",
     "copy-deps": "cpx \"*{package.json,yarn.lock}\" \"dist/functions\"",
     "install-deps": "cd \"dist/functions\" && yarn",
     "build-public": "cpx \"src/public/**/*.*\" \"dist/public\" -C && cpx \"src/app/static/**/*.*\" \"dist/public/static\"",
