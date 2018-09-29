@@ -119,15 +119,46 @@ Input your project id.
 }
 ```
 
-### Login to FIrebase CLI
+### Deploy from local development
+
+#### Login to Firebase CLI
 ```
 $ yarn run firebase-login
 ```
 
-### Deploy Hosting resources and Cloud Functions
+#### Deploy Hosting resources and Cloud Functions
 ```
 $ yarn run deploy
 ```
+
+### Deploy from CircleCI
+
+<details>
+
+#### Set up a project on CircleCI
+Set up a project by referring to the following pages.
+
+[Getting Started Introduction - CircleCI](https://circleci.com/docs/2.0/getting-started/#setting-up-your-build-on-circleci) 
+
+#### Generate an access token for using the Firebase
+```
+$ ./node_modules/.bin/firebase login:ci
+```
+
+#### Set the environment variables to CircleCI
+Set the environment variables by referring to the following pages.
+
+[Using Environment Variables - CircleCI](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project)
+
+* `FIREBASE_TOKEN`
+* `GITHUB_API_TOKEN`
+* `QIITA_API_TOKEN`
+* `SENTRY_PUBLIC_DSN`
+
+#### Deploy Hosting resources and Cloud Functions
+Run build and deploy for every commit for `master` branch.
+
+</details>
 
 ## :shower: Clean `dist` folder
 ```
