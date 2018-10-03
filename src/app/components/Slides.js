@@ -20,7 +20,25 @@ const Slides = props => {
     )
   })
 
-  return <div className="row">{slides}</div>
+  return (
+    <section id="slides">
+      <h2>Slides</h2>
+      <div className="row">
+        <div className="row">{slides}</div>
+      </div>
+      <ul className="actions">
+        <li>
+          <a
+            href={`https://speakerdeck.com/${props.user}`}
+            className="button"
+            target="_blank"
+          >
+            Show More Slides
+          </a>
+        </li>
+      </ul>
+    </section>
+  )
 }
 
 Slides.propTypes = {

@@ -16,7 +16,23 @@ const QiitaItems = props => {
     )
   })
 
-  return <ul className="alt">{items}</ul>
+  return (
+    <section id="qiita">
+      <h2>Qiita</h2>
+      <ul className="alt">{items}</ul>
+      <ul className="actions">
+        <li>
+          <a
+            href={`https://qiita.com/${props.user}`}
+            className="button"
+            target="_blank"
+          >
+            Show More Items
+          </a>
+        </li>
+      </ul>
+    </section>
+  )
 }
 
 QiitaItems.propTypes = {
