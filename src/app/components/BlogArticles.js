@@ -23,7 +23,19 @@ const BlogArticles = props => {
     )
   })
 
-  return <ul className="alt">{items}</ul>
+  return (
+    <section id="blog">
+      <h2>Blog</h2>
+      <ul className="alt">{items}</ul>
+      <ul className="actions">
+        <li>
+          <a href={props.blogUrl} className="button" target="_blank">
+            Show More Items
+          </a>
+        </li>
+      </ul>
+    </section>
+  )
 }
 
 BlogArticles.propTypes = {

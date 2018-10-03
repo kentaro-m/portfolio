@@ -17,7 +17,23 @@ const GitHubRepos = props => {
     )
   })
 
-  return <ul className="alt">{repos}</ul>
+  return (
+    <section id="github">
+      <h2>GitHub</h2>
+      <ul className="alt">{repos}</ul>
+      <ul className="actions">
+        <li>
+          <a
+            href={`https://github.com/${props.user}`}
+            className="button"
+            target="_blank"
+          >
+            Show More Items
+          </a>
+        </li>
+      </ul>
+    </section>
+  )
 }
 
 GitHubRepos.propTypes = {
