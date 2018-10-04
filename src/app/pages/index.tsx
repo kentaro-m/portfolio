@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import config from '../lib/config'
 import Layout from '../components/Layout'
 import { getRepos, getSlides, getQiitaItems, getArticles } from '../lib/utils'
 import '../styles/main.scss'
 
-export default class Index extends Component {
+interface IndexProps {
+  repos: array
+  slides: array
+  qiitaItems: array
+  articles: array
+}
+
+export default class Index extends Component<IndexProps> {
   static async getInitialProps() {
     const repos = await getRepos(config.user.github, config.github.topic)
     const slides = await getSlides(
@@ -37,11 +43,4 @@ export default class Index extends Component {
       />
     )
   }
-}
-
-Index.propTypes = {
-  repos: PropTypes.array,
-  slides: PropTypes.array,
-  qiitaItems: PropTypes.array,
-  articles: PropTypes.array
 }
