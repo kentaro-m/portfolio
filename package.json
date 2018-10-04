@@ -28,23 +28,13 @@
     "clean": "rimraf \"dist/functions/**\" && rimraf \"dist/public\"",
     "firebase-login": "firebase login"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js}": [
-      "eslint src/app/**/*.js --fix",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@mdx-js/mdx": "^0.15.3",
     "@octokit/rest": "^15.12.0",
     "@sentry/browser": "^4.0.5",
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-sass": "^0.2.0",
+    "@zeit/next-typescript": "1.1.0",
     "dotenv-webpack": "^1.5.7",
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.5",
@@ -58,6 +48,8 @@
     "react-emoji-render": "^0.4.5"
   },
   "devDependencies": {
+    "@types/next": "^7.0.0",
+    "@types/react": "^16.4.14",
     "cpx": "^1.5.0",
     "eslint": "^5.6.0",
     "eslint-config-prettier": "^3.0.1",
@@ -73,6 +65,9 @@
     "husky": "^1.0.0-rc.14",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.1"
   }
 }
