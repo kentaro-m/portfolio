@@ -22,7 +22,7 @@ $ cd portfolio
 $ yarn install
 ```
 
-### Update `.env.example` file and `config.js` file
+### Update `.env.example` file and `config.ts` file
 Rename `.env.example` to `.env`. Get the token from each service and input.
 ```
 # Scope: public_repo
@@ -33,7 +33,7 @@ QIITA_API_TOKEN=<Your Qiita Token>
 SENTRY_PUBLIC_DSN=<Your Sentry Public DSN> 
 ```
 
-Input user info on `src/app/lib/config.js`.
+Input user info on `src/app/lib/config.ts`.
 ```js
 const prod = process.env.NODE_ENV === 'production'
 
