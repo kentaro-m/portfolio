@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch'
 import querystring from 'querystring'
 import Octokit from '@octokit/rest'
 
-export async function getRepos(user, topic) {
+export async function getRepos(user: string, topic: string): Promise<Array<object>> {
   const octokit = new Octokit({ headers: { 'user-agent': 'portfolio' } })
 
   octokit.authenticate({
@@ -16,7 +16,7 @@ export async function getRepos(user, topic) {
   return repos
 }
 
-export async function getSlides(user, count) {
+export async function getSlides(user: string, count: string): Promise<Array<object>> {
   const qs = querystring.stringify({
     q: `select * from feed where url = 'https://speakerdeck.com/${user}.atom' limit ${count}`,
     format: 'json'
@@ -29,7 +29,7 @@ export async function getSlides(user, count) {
   return slides
 }
 
-export async function getQiitaItems(count) {
+export async function getQiitaItems(count: string): Promise<Array<object>> {
   const qs = querystring.stringify({
     page: 1,
     per_page: count
@@ -49,7 +49,7 @@ export async function getQiitaItems(count) {
   return items
 }
 
-export async function getArticles(url, count) {
+export async function getArticles(url: string, count: string): Array<object> {
   const qs = querystring.stringify({
     q: `select title,link, published, id from feed where url = '${url}' limit ${count}`,
     format: 'json'
