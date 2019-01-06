@@ -18,13 +18,14 @@ export async function getRepos(user, topic) {
 
 export async function getSlides(user, count) {
   const qs = querystring.stringify({
-    q: `select * from feed where url = 'https://speakerdeck.com/${user}.atom' limit ${count}`,
-    format: 'json'
+    rss_url: `https://speakerdeck.com/${user}.atom`,
+    count: count,
+    api_key: process.env.RSS2JSON_API_TOKEN
   })
 
-  const res = await fetch(`https://query.yahooapis.com/v1/public/yql?${qs}`)
+  const res = await fetch(`https://api.rss2json.com/v1/api.json?${qs}`)
   const json = await res.json()
-  const slides = json.query.results.entry
+  const slides = json.items
 
   return slides
 }
@@ -51,13 +52,14 @@ export async function getQiitaItems(count) {
 
 export async function getArticles(url, count) {
   const qs = querystring.stringify({
-    q: `select title,link, published, id from feed where url = '${url}' limit ${count}`,
-    format: 'json'
+    rss_url: url,
+    count: count,
+    api_key: process.env.RSS2JSON_API_TOKEN
   })
 
-  const res = await fetch(`https://query.yahooapis.com/v1/public/yql?${qs}`)
+  const res = await fetch(`https://api.rss2json.com/v1/api.json?${qs}`)
   const json = await res.json()
-  const articles = json.query.results.entry
+  const articles = json.items
 
   return articles
 }

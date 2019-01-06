@@ -29,6 +29,8 @@ Rename `.env.example` to `.env`. Get the token from each service and input.
 GITHUB_API_TOKEN=<Your GitHub Token>
 # Scope: read_qiita
 QIITA_API_TOKEN=<Your Qiita Token>
+# RSS to JSON Convert Tool 
+RSS2JSON_API_TOKEN=<Your rss2json token>
 # Error Tracking Tool
 SENTRY_PUBLIC_DSN=<Your Sentry Public DSN> 
 ```
@@ -153,6 +155,7 @@ Set the environment variables by referring to the following pages.
 * `FIREBASE_TOKEN`
 * `GITHUB_API_TOKEN`
 * `QIITA_API_TOKEN`
+* `RSS2JSON_API_TOKEN`
 * `SENTRY_PUBLIC_DSN`
 
 #### Deploy Hosting resources and Cloud Functions

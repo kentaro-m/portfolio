@@ -4,15 +4,14 @@ import moment from 'moment'
 
 const Slides = props => {
   const slides = props.slides.map(slide => {
-    const imageUrl = slide.content.content.match(/src="(.+?)"/)
-    const createdAt = moment(slide.published).format('YYYY-MM-DD')
+    const createdAt = moment(slide.pubDate).format('YYYY-MM-DD')
 
     return (
-      <article className="col-4 col-12-xsmall work-item" key={slide.id}>
-        <a href={slide.link.href} className="image fit thumb" target="_blank">
-          <img src={imageUrl[1]} alt="" />
+      <article className="col-4 col-12-xsmall work-item" key={slide.guid}>
+        <a href={slide.link} className="image fit thumb" target="_blank">
+          <img src={slide.thumbnail} alt="" />
         </a>
-        <a href={slide.link.href} className="slide-title" target="_blank">
+        <a href={slide.link} className="slide-title" target="_blank">
           <h3>{slide.title}</h3>
         </a>
         <p>{createdAt}</p>
