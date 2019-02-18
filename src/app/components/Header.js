@@ -6,7 +6,7 @@ const Header = props => (
   <header id="header">
     <div className="inner">
       <a href="#" className="image avatar">
-        <img src="/static/images/avatar.png" alt="" />
+        <img src="/static/images/avatar.jpeg" alt="" />
       </a>
       <SiteDescription />
     </div>
