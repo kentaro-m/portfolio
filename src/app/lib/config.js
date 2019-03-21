@@ -17,15 +17,17 @@ module.exports = {
     linkedin: 'kentarom'
   },
   skills: [
-    { type: 'JavaScript (ES2015)', level: 80 },
-    { type: 'Node.js', level: 70 },
-    { type: 'AWS', level: 70 },
-    { type: 'React.js', level: 60 },
-    { type: 'HTML', level: 60 },
-    { type: 'CSS', level: 60 },
-    { type: 'Java', level: 50 },
+    { type: 'Node.js', level: 80 },
+    { type: 'React', level: 70 },
+    { type: 'JavaScript', level: 60 },
+    { type: 'TypeScript', level: 40 },
+    { type: 'HTML5', level: 40 },
+    { type: 'CSS', level: 40 },
+    { type: 'Java', level: 60 },
     { type: 'Go', level: 40 },
-    { type: 'TypeScript', level: 40 }
+    { type: 'AWS', level: 70 },
+    { type: 'MySQL', level: 50 },
+    { type: 'Docker', level: 40 }
   ],
   github: {
     topic: 'my-portfolio'
