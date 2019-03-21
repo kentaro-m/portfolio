@@ -34,8 +34,8 @@ module.exports = {
     item_count: '5'
   },
   blog: {
-    url: 'https://kentarom.hatenablog.com/',
-    feed_url: 'https://kentarom.hatenablog.com/feed',
+    url: 'https://blog.kentarom.com/',
+    feed_url: 'https://blog.kentarom.com/rss.xml',
     article_count: '5'
   },
   speaker_deck: {
