@@ -1,20 +1,20 @@
 import { connect } from 'react-redux'
-import QiitaItems from '../components/QiitaItems'
+import Slides from '../components/Slides'
 import { bindActionCreators } from 'redux'
-import { fetchQiitaItems } from '../actions/qiita'
+import { fetchSlides } from '../actions/slide'
 import config from '../lib/config'
 
 const mapStateToProps = state => {
   return {
-    qiitaItems: state.qiita.qiitaItems,
-    user: config.user.qiita
+    slides: state.slide.slides,
+    user: config.user.speaker_deck
   }
 }
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetchQiitaItemsStart: params => fetchQiitaItems.start({ params })
+      fetchSlidesStart: params => fetchSlides.start({ params })
     },
     dispatch
   )
@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(QiitaItems)
+)(Slides)

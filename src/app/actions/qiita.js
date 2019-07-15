@@ -1,5 +1,3 @@
-import { GitHubActionType } from './github'
-
 export const QiitaActionType = {
   FETCH_QIITA_ITEMS_START: 'FETCH_QIITA_ITEMS/START',
   FETCH_QIITA_ITEMS_SUCCESS: 'FETCH_QIITA_ITEMS/SUCCEED',
