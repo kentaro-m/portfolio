@@ -12,8 +12,8 @@ const Main = () => {
       <SkillBars backgroundColor="#4173B3" skills={config.skills} />
       <GitHubRepos />
       <QiitaItems />
-      <BlogArticles/>
-      <Slides/>
+      <BlogArticles />
+      <Slides />
     </div>
   )
 }

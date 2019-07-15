@@ -23,6 +23,7 @@ export const qiitaReducer = (state = initialState, action) => {
         error: action.payload.error
       }
     default: {
+      // eslint-disable-next-line no-unused-vars
       const _ = action
       return state
     }

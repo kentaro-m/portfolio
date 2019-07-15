@@ -41,7 +41,8 @@ const Slides = props => {
 }
 
 Slides.propTypes = {
-  slides: PropTypes.array
+  slides: PropTypes.array,
+  user: PropTypes.string
 }
 
 export default Slides

@@ -1,3 +1,4 @@
+import React from 'react'
 import App, { Container } from 'next/app'
 import * as Sentry from '@sentry/browser'
 import { Provider } from 'react-redux'

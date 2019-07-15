@@ -1,7 +1,8 @@
 import { Head } from 'next/document'
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default props => {
+const HeadElm = props => {
   const { title, description, url, image, twitter } = props
 
   return (
@@ -33,3 +34,13 @@ export default props => {
     </Head>
   )
 }
+
+HeadElm.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
+  image: PropTypes.string,
+  twitter: PropTypes.string
+}
+
+export default HeadElm
