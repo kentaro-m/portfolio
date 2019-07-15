@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import config from '../lib/config'
 import Layout from '../components/Layout'
-import { getArticles } from '../lib/utils'
 import { fetchRepos } from '../actions/github'
 import { fetchQiitaItems } from '../actions/qiita'
 import { fetchSlides } from '../actions/slide'
+import { fetchArticles } from '../actions/article'
 import { connect } from 'react-redux'
 import '../styles/main.scss'
 
@@ -18,25 +17,12 @@ class Index extends Component {
     )
     store.dispatch(fetchQiitaItems.start({ count: config.qiita.item_count }))
     store.dispatch(fetchSlides.start({ user: config.user.speaker_deck, count: config.speaker_deck.slides_count }))
-
-    const articles = await getArticles(
-      config.blog.feed_url,
-      config.blog.article_count
-    )
-    return {
-      articles: articles
-    }
+    store.dispatch(fetchArticles.start({ url: config.blog.feed_url, count: config.blog.article_count }))
   }
 
   render() {
-    const { articles } = this.props
-
-    return <Layout articles={articles} />
+    return <Layout/>
   }
-}
-
-Index.propTypes = {
-  articles: PropTypes.array
 }
 
 export default connect()(Index)
