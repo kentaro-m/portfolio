@@ -1,8 +1,8 @@
 import React from 'react'
-import GitHubRepos from '../containers/GitHubRepos'
-import Slides from '../containers/Slides'
-import QiitaItems from '../containers/QiitaItems'
-import BlogArticles from '../containers/BlogArticles'
+import GitHubReposContainer from '../containers/GitHubReposContainer'
+import SlidesContainer from '../containers/SlidesContainer'
+import QiitaItemsContainer from '../containers/QiitaItemsContainer'
+import BlogArticlesContainer from '../containers/BlogArticlesContainer'
 import SkillBars from './SkillBars'
 import config from '../lib/config'
 
@@ -10,10 +10,10 @@ const Main = () => {
   return (
     <div id="main">
       <SkillBars backgroundColor="#4173B3" skills={config.skills} />
-      <GitHubRepos />
-      <QiitaItems />
-      <BlogArticles />
-      <Slides />
+      <GitHubReposContainer />
+      <QiitaItemsContainer />
+      <BlogArticlesContainer />
+      <SlidesContainer />
     </div>
   )
 }
