@@ -32,7 +32,8 @@ const BlogArticles = props => {
 }
 
 BlogArticles.propTypes = {
-  articles: PropTypes.array
+  articles: PropTypes.array,
+  blogUrl: PropTypes.string
 }
 
 export default BlogArticles

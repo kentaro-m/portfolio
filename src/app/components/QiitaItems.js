@@ -36,7 +36,8 @@ const QiitaItems = props => {
 }
 
 QiitaItems.propTypes = {
-  qiitaItems: PropTypes.array
+  qiitaItems: PropTypes.array,
+  user: PropTypes.string
 }
 
 export default QiitaItems

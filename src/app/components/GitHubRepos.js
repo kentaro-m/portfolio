@@ -37,7 +37,8 @@ const GitHubRepos = props => {
 }
 
 GitHubRepos.propTypes = {
-  repos: PropTypes.array
+  repos: PropTypes.array,
+  user: PropTypes.string
 }
 
 export default GitHubRepos

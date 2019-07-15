@@ -1,47 +1,38 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import config from '../lib/config'
 import Layout from '../components/Layout'
-import { getRepos, getSlides, getQiitaItems, getArticles } from '../lib/utils'
+import { fetchRepos } from '../actions/github'
+import { fetchQiitaItems } from '../actions/qiita'
+import { fetchSlides } from '../actions/slide'
+import { fetchArticles } from '../actions/article'
+import { connect } from 'react-redux'
 import '../styles/main.scss'
 
-export default class Index extends Component {
-  static async getInitialProps() {
-    const repos = await getRepos(config.user.github, config.github.topic)
-    const slides = await getSlides(
-      config.user.speaker_deck,
-      config.speaker_deck.slides_count
+class Index extends Component {
+  static async getInitialProps(props) {
+    const { store } = props.ctx
+
+    store.dispatch(
+      fetchRepos.start({ user: config.user.github, topic: config.github.topic })
     )
-    const qiitaItems = await getQiitaItems(config.qiita.item_count)
-    const articles = await getArticles(
-      config.blog.feed_url,
-      config.blog.article_count
+    store.dispatch(fetchQiitaItems.start({ count: config.qiita.item_count }))
+    store.dispatch(
+      fetchSlides.start({
+        user: config.user.speaker_deck,
+        count: config.speaker_deck.slides_count
+      })
     )
-    return {
-      repos: repos,
-      slides: slides,
-      qiitaItems: qiitaItems,
-      articles: articles
-    }
+    store.dispatch(
+      fetchArticles.start({
+        url: config.blog.feed_url,
+        count: config.blog.article_count
+      })
+    )
   }
 
   render() {
-    const { repos, slides, qiitaItems, articles } = this.props
-
-    return (
-      <Layout
-        repos={repos}
-        slides={slides}
-        qiitaItems={qiitaItems}
-        articles={articles}
-      />
-    )
+    return <Layout />
   }
 }
 
-Index.propTypes = {
-  repos: PropTypes.array,
-  slides: PropTypes.array,
-  qiitaItems: PropTypes.array,
-  articles: PropTypes.array
-}
+export default connect()(Index)
