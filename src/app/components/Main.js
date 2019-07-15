@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import GitHubRepos from './GitHubRepos'
+import GitHubRepos from '../containers/GitHubRepos'
 import Slides from './Slides'
 import QiitaItems from './QiitaItems'
 import BlogArticles from './BlogArticles'
@@ -11,7 +11,7 @@ const Main = props => {
   return (
     <div id="main">
       <SkillBars backgroundColor="#4173B3" skills={config.skills} />
-      <GitHubRepos repos={props.repos} user={config.user.github} />
+      <GitHubRepos />
       <QiitaItems qiitaItems={props.qiitaItems} user={config.user.qiita} />
       <BlogArticles articles={props.articles} blogUrl={config.blog.url} />
       <Slides slides={props.slides} user={config.user.speaker_deck} />
@@ -20,7 +20,6 @@ const Main = props => {
 }
 
 Main.propTypes = {
-  repos: PropTypes.array,
   slides: PropTypes.array,
   qiitaItems: PropTypes.array,
   articles: PropTypes.array,

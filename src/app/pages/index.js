@@ -2,12 +2,19 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import config from '../lib/config'
 import Layout from '../components/Layout'
-import { getRepos, getSlides, getQiitaItems, getArticles } from '../lib/utils'
+import { getSlides, getQiitaItems, getArticles } from '../lib/utils'
+import { fetchRepos } from '../actions/github'
+import { connect } from 'react-redux'
 import '../styles/main.scss'
 
-export default class Index extends Component {
-  static async getInitialProps() {
-    const repos = await getRepos(config.user.github, config.github.topic)
+class Index extends Component {
+  static async getInitialProps(props) {
+    const { store } = props.ctx
+
+    store.dispatch(
+      fetchRepos.start({ user: config.user.github, topic: config.github.topic })
+    )
+
     const slides = await getSlides(
       config.user.speaker_deck,
       config.speaker_deck.slides_count
@@ -18,7 +25,6 @@ export default class Index extends Component {
       config.blog.article_count
     )
     return {
-      repos: repos,
       slides: slides,
       qiitaItems: qiitaItems,
       articles: articles
@@ -26,22 +32,18 @@ export default class Index extends Component {
   }
 
   render() {
-    const { repos, slides, qiitaItems, articles } = this.props
+    const { slides, qiitaItems, articles } = this.props
 
     return (
-      <Layout
-        repos={repos}
-        slides={slides}
-        qiitaItems={qiitaItems}
-        articles={articles}
-      />
+      <Layout slides={slides} qiitaItems={qiitaItems} articles={articles} />
     )
   }
 }
 
 Index.propTypes = {
-  repos: PropTypes.array,
   slides: PropTypes.array,
   qiitaItems: PropTypes.array,
   articles: PropTypes.array
 }
+
+export default connect()(Index)

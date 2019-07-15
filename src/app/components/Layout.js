@@ -7,7 +7,6 @@ const Layout = props => (
   <div>
     <Header />
     <Main
-      repos={props.repos}
       slides={props.slides}
       qiitaItems={props.qiitaItems}
       articles={props.articles}
@@ -16,7 +15,6 @@ const Layout = props => (
 )
 
 Layout.propTypes = {
-  repos: PropTypes.array,
   slides: PropTypes.array,
   qiitaItems: PropTypes.array
 }
